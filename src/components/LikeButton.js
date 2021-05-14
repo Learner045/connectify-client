@@ -40,12 +40,20 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
   );
 
   return (
-    <Button as="div" labelPosition="right" onClick={likePost}>
-      <MyPopup content={liked ? 'Unlike' : 'Like'}>{likeButton}</MyPopup>
-      <Label basic color="teal" pointing="left">
-        {likeCount}
-      </Label>
-    </Button>
+    user? (
+      <Button as='div' labelPosition='right' onClick={likePost}>
+          <MyPopup content={liked? 'unlike': 'like'}>
+          {likeButton} 
+          </MyPopup>
+      </Button>
+  ):(
+      <Button labelPosition='right' as='a' href='/login'>
+          <CustomPopup content={liked? 'unlike': 'like'}>
+          {likeButton} 
+          </CustomPopup>
+      </Button>
+  )
+    
   );
 }
 
