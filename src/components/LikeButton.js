@@ -48,9 +48,9 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
       </Button>
   ):(
       <Button labelPosition='right' as='a' href='/login'>
-          <CustomPopup content={liked? 'unlike': 'like'}>
+          <MyPopup content={liked? 'unlike': 'like'}>
           {likeButton} 
-          </CustomPopup>
+          </MyPopup>
       </Button>
   )
     
